@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL_Management</title>
+</head>
+<body>
+    <div>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('mylist') }}">List</a>
+    </div>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
