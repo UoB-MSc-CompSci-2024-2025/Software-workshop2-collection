@@ -1,0 +1,13 @@
+{% extends "base_learn.html" %}
+
+{% block body %}
+<h1>My List</h1>
+
+<ul>
+  {% for item in list_test %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}

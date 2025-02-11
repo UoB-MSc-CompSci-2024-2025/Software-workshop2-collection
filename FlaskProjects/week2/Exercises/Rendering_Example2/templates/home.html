@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1>Hello, {{name}}. </h1>
+<h2>You have logged in at {{current_date_time}}</h2>
+<h3>Famous quotes</h3>
+
+<ul>
+  {% for item in quotes_list %}
+  <li>{{item}}</li>
+  {% endfor %}
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Management Exercises</title>
+</head>
+<body>
+<div>
+    <a href="{{url_for('home')}}">Home</a>
+    <a href="{{url_for('logged_in_time')}}">Logged in time</a>
+    <a href="{{url_for('show_quotes')}}">Daily Quotes</a>
+    <a href="{{url_for('user',name='Logesh Sharma')}}">Show user</a>
+    <a href="{{url_for('check_prime_number',number=2)}}">Prime number checker</a>
+</div>
+{% block body %}
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block body %}
+<ul>
+  {% for item in quotes_list %}
+  <li>{{item}}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

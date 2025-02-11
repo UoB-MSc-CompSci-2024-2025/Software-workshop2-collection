@@ -3,9 +3,9 @@ from app import app
 
 @app.route("/")
 def home():
-    return render_template('home.html', name='Alan')
+    return render_template('home_learn.html', name='logesh')
 
 @app.route('/mylist')
 def mylist():
-    lst = ['Car', 'House', 'TV']
-    return render_template('list.html', lst=lst)
+    list_test = ['Car', 'House', 'TV']
+    return render_template('list_learn.html', list_test=list_test)
