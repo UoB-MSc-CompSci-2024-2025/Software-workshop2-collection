@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="391a5489-dc10-4266-b8e7-6e70b359fe2a" name="Changes" comment="Add week2 exercise question pdf" />
+    <list default="true" id="391a5489-dc10-4266-b8e7-6e70b359fe2a" name="Changes" comment="Add week3 exercise solution and question pdf">
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/.flaskenv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/app/data/quotes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/app/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/app/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/app/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/app/templates/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/app/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/app/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week3/Exercises/Menu_app/run.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,16 +45,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/logeshsharma/Documents/Logesh's-UOB/SoftwareWorkshop1-lab/Software-workshop2-collection&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/logeshsharma/Documents/Logesh's-UOB/SoftwareWorkshop1-lab/Software-workshop2-collection/FlaskProjects/week3/Exercises"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/FlaskProjects/week3/Exercises" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/FlaskProjects/week3/Exercises" />
       <recent name="$PROJECT_DIR$/FlaskProjects/week2/Exercises" />
       <recent name="$PROJECT_DIR$/FlaskProjects/week3/leacture_resource" />
       <recent name="$PROJECT_DIR$/FlaskProjects/week3" />
@@ -124,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739275130187</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add week3 exercise solution and question pdf">
+      <option name="closed" value="true" />
+      <created>1739293832322</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739293832322</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -135,6 +163,7 @@
     <MESSAGE value="Add Week2 exercises resources" />
     <MESSAGE value="Remove .idea folder in root" />
     <MESSAGE value="Add week2 exercise question pdf" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add week2 exercise question pdf" />
+    <MESSAGE value="Add week3 exercise solution and question pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add week3 exercise solution and question pdf" />
   </component>
 </project>

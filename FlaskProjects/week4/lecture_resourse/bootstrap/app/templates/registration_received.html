@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <H1>Thank you for registering</H1>
+    <p>Your registration information is as follows:</p>
+    <table>
+        <tr>
+            <td><strong>{{ form.username.label }}</strong>:</td>
+            <td>{{ form.username.data }}</td>
+        </tr>
+        <tr>
+            <td><strong>{{ form.email.label }}</strong>:</td>
+            <td>{{ form.email.data }}</td>
+        </tr>
+    </table>
+{% endblock %}
