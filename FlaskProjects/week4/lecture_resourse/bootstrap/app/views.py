@@ -28,3 +28,6 @@ def register():
         # flash(f'Registration for {form.username.data}')
         return render_template('registration_received.html', title="Registration Received", form=form)
     return render_template('registerBS3.html', title='Register', form=form)
+
+
+# view is like controller - which hold the end points

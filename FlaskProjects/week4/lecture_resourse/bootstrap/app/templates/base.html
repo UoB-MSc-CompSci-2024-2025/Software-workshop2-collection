@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title }}</title>
     <link
@@ -12,9 +12,18 @@
 </head>
 
 <body>
+
+<!--navbar
+   This class defines a navigation bar (navbar), which is a responsive header component used for menus, branding, and navigation links.-->
+
+<!--navbar-expand-sm
+    This controls when the navbar should expand (show full menu) or collapse (show a hamburger menu).
+    sm stands for small screens (≥576px).
+    This means the navbar will be collapsed (hamburger menu) on tiny screens (<576px)
+    but will expand (show all links) on small screens (≥576px) and larger.-->
 <nav class="navbar navbar-expand-sm bg-dark" data-bs-theme="dark">
     <div class="container">
-        <a class="navbar-brand" href="{{ url_for('home') }}">MyApp</a>
+        <a class="navbar-brand" href="{{ url_for('home') }}">Home page</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,7 +49,16 @@
     </div>
 </nav>
 
-<div class="container mt-3">
+<!-- mt stands for "margin-top", which adds space above the element.
+    1 is the spacing scale (smallest value). Bootstrap uses a spacing scale from 0 to 5:
+    mt-0 → No margin (0px)
+    mt-1 → Small margin (~4px)
+    mt-2 → Medium margin (~8px)
+    mt-3 → Large margin (~16px)
+    mt-4 → Larger margin (~24px)
+    mt-5 → Largest margin (~48px)
+    -->
+<div class="container mt-1">
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         {% for category, message in messages %}
@@ -78,4 +96,3 @@
 
 </body>
 </html>
-
