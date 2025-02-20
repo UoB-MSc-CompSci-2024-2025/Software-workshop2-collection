@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container">
+    <form method="POST" action="" novalidate>
+        {{form.hidden_tag()}}
+        <div class="mt-5 ms-5 me-5">{{form.username.label(class = 'form-label')}} <br/>
+            {{ form.username(class='form-control' + (' is-invalid' if form.username.errors else '')) }} <br/>
+            {% for error in form.username.errors %}
+            <div class="invalid-feedback">{{error}}</div>
+            {% endfor %}
+
+
+        </div>
+        <div class="ms-5 me-5">{{form.email.label(class= 'form-label')}} {{ form.email(class='form-control' + ('
+            is-invalid'
+            if form.email.errors else '')) }} <br/>
+            {% for error in form.email.errors %}
+            <div class="invalid-feedback">{{error}}</div>
+            {% endfor %}
+        </div>
+
+
+        <div class="ms-5 me-5">{{form.date_of_birth.label(class = 'form-label')}} {{form.date_of_birth(class =
+            'form-control' + (' is-invalid' if form.date_of_birth.errors else '' ))}} <br/>
+            {% for error in form.date_of_birth.errors %}
+            <div class="invalid-feedback">{{error}}</div>
+            {% endfor %}
+        </div>
+
+        <div class="ms-5 me-5">{{form.phone.label(class = 'form-label')}} <br/> {{form.phone(class = 'form-control' + ('
+            is-invalid' if form.phone.errors else ''))}} <br/>
+            {% for error in form.phone.errors %}
+            <div class="invalid-feedback">{{error}}</div>
+            {% endfor %}
+        </div>
+
+        <div class="ms-5 me-5">{{form.address.label(class = 'form-label')}} <br/> {{form.address(class = 'form-control'
+            + (' is-invalid' if form.address.errors else ''))}} <br/>
+            {% for error in form.address.errors %}
+            <div class="invalid-feedback">{{error}}</div>
+            {% endfor %}
+        </div>
+
+        <div class="ms-5 me-5">{{form.height.label(class = 'form-label')}} <br/> {{form.height(class = 'form-control' +
+            (' is-invalid' if
+            form.height.errors else ''))}} <br/>
+            {% for error in form.height.errors %}
+            <div class="invalid-feedback">{{error}}</div>
+            {% endfor %}
+        </div>
+
+        <div class="ms-5 me-5">{{form.weight.label(class ='form-label')}} <br/> {{form.weight(class = 'form-control' +
+            (' is-invalid' if form.weight.errors else ''))}} <br/>
+            {% for error in form.weight.errors %}
+            <div class="invalid-feedback">{{error}}</div>
+            {% endfor %}
+        </div>
+
+        <div class="ms-5 me-5">{{form.password.label(class ='form-label')}} <br/> {{form.password(class = 'form-control'
+            +
+            (' is-invalid' if form.password.errors else ''))}} <br/>
+            {% for error in form.password.errors %}
+            <div class="invalid-feedback">{{error}}</div>
+            {% endfor %}
+
+        </div>
+
+        <div class="ms-5 me-5">{{form.confirm_password.label(class ='form-label')}} <br/>{{form.confirm_password(class = 'form-control'
+            +
+            (' is-invalid' if form.confirm_password.errors else ''))}}<br/>
+            {% for error in form.confirm_password.errors %}
+            <div class="invalid-feedback">{{error}}</div>
+            {% endfor %}
+
+        </div>
+
+
+        <div class="ms-5 mb-5">{{form.submit(class='btn btn-primary')}}</div>
+    </form>
+</div>
+{% endblock %}
