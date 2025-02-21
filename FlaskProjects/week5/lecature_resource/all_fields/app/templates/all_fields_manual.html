@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+<div class="container m-2">
+    <form method="POST" action="" novalidate>
+        {{ form.hidden_tag() }}
+        <table class="table">
+            <tr>
+                <th>Fields</th>
+                <th>Values</th>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.boolean_f, False) }}</td>
+                <td>{{ form.boolean_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.date_f, False) }}</td>
+                <td>{{ form.date_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.datetime_f, False) }}</td>
+                <td>{{ form.datetime_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.datetimelocal_f, False) }}</td>
+                <td>{{ form.datetimelocal_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.decimal_f, False) }}</td>
+                <td>{{ form.decimal_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.decimalrange_f, False) }}</td>
+                <td>{{ form.decimalrange_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.submit_f, False) }}</td>
+                <td>{{ form.submit_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.email_f, False) }}</td>
+                <td>{{ form.email_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.file_f, False) }}</td>
+                <td>{{ form.file_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.multiplefile_f, False) }}</td>
+                <td>{{ form.multiplefile_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.float_f, False) }}</td>
+                <td>{{ form.float_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.integerrange_f, False) }}</td>
+                <td>{{ form.integerrange_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.month_f, False) }}</td>
+                <td>{{ form.month_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.radio_f, False) }}</td>
+                <td>{{ form.radio_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.select_f, False) }}</td>
+                <td>{{ form.select_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.search_f, False) }}</td>
+                <td>{{ form.search_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.selectmultiple_f, False) }}</td>
+                <td>{{ form.selectmultiple_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.string_f, False) }}</td>
+                <td>{{ form.string_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.tel_f, False) }}</td>
+                <td>{{ form.tel_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.time_f, False) }}</td>
+                <td>{{ form.time_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.url_f, False) }}</td>
+                <td>{{ form.url_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.password_f, False) }}</td>
+                <td>{{ form.password_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.textarea_f, False) }}</td>
+                <td>{{ form.textarea_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.color_f, False) }}</td>
+                <td>{{ form.color_f.data }}</td>
+            </tr>
+            <tr>
+                <td>{{ wtf.form_field(form.fieldlist_f1, False) }}</td>
+                <td>{{ form.fieldlist_f1.data }}</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>You can manually lay out the fields in the fieldlist:</p>
+                    {% for field in form.fieldlist_f2 %}
+                    {{ wtf.form_field(field, False) }}
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for field in form.fieldlist_f2 %}
+                    <ul>
+                        <li>{{ field.data }}</li>
+                    </ul>
+                    {% endfor %}
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+{% endblock %}

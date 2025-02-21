@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>My List</h1>
+<table>
+    {% for item in lst %}
+    <tr>
+        {# for information about the special "loop" variable, see:
+            https://jinja.palletsprojects.com/en/stable/templates/#list-of-control-structures
+        #}
+        <td {%- if chosen|int == loop.index0 %} class="bg-primary" {% endif -%}>{{ item }}
+        </td>
+        <td>
+            <form action="{{ url_for('choose') }}" method="post">
+                {{ form.csrf_token() }}
+                {{ form.choice(value=loop.index0) }}
+                <button class="btn" type="submit">
+                    <i class="bi-check-circle"></i>
+                </button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<form action="{{ url_for('choose') }}" method="post">
+    {{ form.csrf_token() }}
+    {{ form.choice(value=-1) }}
+    <button class="btn" type="submit">
+        <i class="bi-x-circle"></i>
+    </button>
+</form>
+{% endblock %}
