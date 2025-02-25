@@ -131,6 +131,8 @@ def upload_csv():
             except ValueError as error:
                 flash(f'File upload failed.'
                       ' Please correct your file and try again', 'danger')
+            finally:
+                silent_remove(filepath)
 
     return render_template('upload_csv.html', title='Please upload a csv', form=form)
 
@@ -146,3 +148,10 @@ def is_valid_date_range(date):
     converted_date = datetime.strptime(date, "%d/%m/%Y")
     return datetime.now().date() >= converted_date.date() > datetime(1905, 2, 25).date()
 
+
+def silent_remove(filepath):
+    try:
+        os.remove(filepath)
+    except Exception as e:
+        pass
+    return
