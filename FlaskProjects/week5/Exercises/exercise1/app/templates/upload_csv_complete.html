@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+    <h1>Upload csv complete</h1>
+    <table class="table">
+        {% for row in contacts %}
+        {% if loop.index0 == 0 %}
+        <thead>
+        <tr>
+            {% for item in row %}
+            <th>{{ item }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        {% else %}
+        <tr>
+            {% for item in row %}
+            <td>{{ item | e }}</td>
+            {% endfor %}
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
