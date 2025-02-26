@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>My List</h1>
+<table>
+    {% for item in lst %}
+    <tr>
+        <td {% if chosen|int == loop.index0 %}
+                    class="bg-primary rounded w-100 ps-1 text-light"
+                {% elif chosen_two|int == loop.index0 %}
+                    class="bg-secondary rounded w-100 ps-1 text-light"
+                {% else %}
+                    class="rounded w-100 ps-1"
+                {% endif %}>
+                {{ item }}
+            </td>
+        <td>
+            <form action="{{ url_for('choose') }}" method="post">
+                {{ form.csrf_token() }}
+                {{ form.choice(value=chosen) }}
+                {{ form.choice_two(value=chosen_two) }}
+                <button class="btn" type="submit" onclick="this.form.choice.value='{{ loop.index0 }}'" >
+                    <i class="bi-check-circle"></i>
+                </button>
+                <button class="btn" type="submit" onclick="this.form.choice_two.value='{{ loop.index0 }}'" >
+                    <i class="bi-check-square"></i>
+                </button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<div class="w-100 d-flex justify-content-center">
+    <form action="{{ url_for('choose') }}" method="post">
+        {{ form.csrf_token() }}
+        {{ form.choice(value=chosen) }}
+        <button class="btn" type="submit" onclick="this.form.choice.value='{{ -1 }}'">
+            <i class="bi-x-circle"> Delete Primary</i>
+        </button>
+        {{ form.choice_two(value=chosen_two) }}
+        <button class="btn" type="submit" onclick="this.form.choice_two.value='{{ -1 }}'">
+            <i class="bi-x-square"> Delete Secondary</i>
+        </button>
+    </form>
+</div>
+{% endblock %}
