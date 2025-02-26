@@ -1,13 +1,14 @@
 import csv
+import io
 from datetime import datetime
 import os.path
 from uuid import uuid4
 
-from flask import render_template, url_for, redirect, request, flash, send_from_directory
+from flask import render_template, url_for, redirect, request, flash, send_from_directory, send_file
 from werkzeug.utils import secure_filename
 
 from app import app
-from app.forms import RegistrationForm, ImageUploadForm, CsvUploadForm
+from app.forms import RegistrationForm, ImageUploadForm, CsvUploadForm, DownloadForm
 
 
 @app.route('/')
@@ -74,10 +75,10 @@ def view_user_image(name):
     return send_from_directory(app.config['UPLOAD_FOLDER'], name)
 
 
+contacts = []
 # Upload CSV routes
 @app.route('/upload_csv', methods=['GET', 'POST'])
 def upload_csv():
-    contacts = []
     form = CsvUploadForm()
     if form.validate_on_submit():
         if form.csv.data:
@@ -135,6 +136,30 @@ def upload_csv():
                 silent_remove(filepath)
 
     return render_template('upload_csv.html', title='Please upload a csv', form=form)
+
+
+@app.route('/download')
+def download():
+    form = DownloadForm()
+    if form.validate_on_submit:
+        return send_from_directory('static', 'MyFile.csv', as_attachment=True, download_name="MyFile.csv",
+                                   mimetype="text/csv")
+    return render_template('download.html', form=form)
+
+
+@app.route('/dynamic_download')
+def dynamic_download():
+    form = DownloadForm()
+    if form.validate_on_submit:
+        with io.StringIO() as mem:
+            writer = csv.writer(mem)
+            for item in contacts:
+                item.pop()
+                writer.writerow(item)
+            mem.seek(0)
+            return send_file(io.BytesIO(mem.getvalue().encode(encoding='utf-8')), as_attachment=True,
+                                   download_name="MyFruitFile.csv", mimetype="text/csv")
+    return render_template('download.html', form= form)
 
 
 def is_valid_date(date):

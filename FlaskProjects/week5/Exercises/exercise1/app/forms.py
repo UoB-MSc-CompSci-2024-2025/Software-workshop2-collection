@@ -36,3 +36,7 @@ class ImageUploadForm(FlaskForm):
 class CsvUploadForm(FlaskForm):
     csv = FileField('Pick your csv file', validators=[FileRequired(), FileAllowed(['csv', 'CSV files only!'])])
     submit =  SubmitField('Upload', validators=[DataRequired()])
+
+
+class DownloadForm(FlaskForm):
+    submit = SubmitField('Download')
