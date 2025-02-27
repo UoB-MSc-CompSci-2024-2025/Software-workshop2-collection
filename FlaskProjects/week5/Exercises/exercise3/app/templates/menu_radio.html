@@ -1,0 +1,82 @@
+<!-- ./week_five/ex_three/app/templates/menu.html -->
+{% extends 'base.html' %}
+{% import "bootstrap_wtf.html" as wtf %}
+{% block content %}
+<form method="POST" action="">
+    {{ form_menu.csrf_token() }}
+    <table class="table">
+        {% set ns = namespace(idx=None, prev_course=None) %}
+        {% for row in menu %}
+            {% if loop.index0 == 0 %}
+                <thead>
+                    <tr>
+                        {% for item in row %}
+                            {% if loop.index0 == 2 %}
+                                <th class="text-end">{{ item }}</th>
+                            {% else %}
+                                <th>{{ item }}</th>
+                            {% endif %}
+                        {% endfor %}
+                        <th class="text-center">Order</th>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                    </tr>
+                </thead>
+            {% else %}
+                {% if ns.prev_course and row[0] != ns.prev_course %}
+                    <tr>
+                        <td colspan="4"></td>
+                    </tr>
+                {% endif %}
+                <tr>
+                    {% for item in row %}
+                        {% if loop.index0 == 0 %}
+                            <td class="fw-bold">{{ item|e }}</td>
+                        {% elif loop.index0 == 2 %}
+                            <td class="text-end">{{ item|e }}</td>
+                        {% else %}
+                            <td>{{ item|e }}</td>
+                        {% endif %}
+                    {% endfor %}
+                    {% if row[0] == 'Starter' %}
+                        <td class="text-center">
+                            {% for subfield in form_menu.starter %}
+                            {% if subfield.label.text == row[1] %}
+                                <label>
+                                    {{ subfield() }}
+                                </label>
+                            {% endif %}
+                            {% endfor %}
+                        </td>
+                    {% elif row[0] == 'Main' %}
+                        <td class="text-center">
+                            {% for subfield in form_menu.main %}
+                            {% if subfield.label.text == row[1] %}
+                                <label>
+                                    {{ subfield() }}
+                                </label>
+                            {% endif %}
+                            {% endfor %}
+                        </td>
+                    {% elif row[0] == 'Dessert' %}
+                        <td class="text-center">
+                            {% for subfield in form_menu.dessert %}
+                            {% if subfield.label.text == row[1] %}
+                                <label>
+                                    {{ subfield() }}
+                                </label>
+                            {% endif %}
+                            {% endfor %}
+                        </td>
+                    {% endif %}
+                </tr>
+                {% set ns.prev_course = row[0] %}
+            {% endif %}
+        {% endfor %}
+    </table>
+    <div class="container mt-5">
+        {{ form_menu.submit(class="btn btn-primary w-100") }}
+    </div>
+</form>
+{% endblock %}

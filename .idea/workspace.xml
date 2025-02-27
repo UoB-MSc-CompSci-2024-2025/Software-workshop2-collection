@@ -4,75 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="391a5489-dc10-4266-b8e7-6e70b359fe2a" name="Changes" comment="Add week5 exercise 1 dan version">
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/data/simple.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/data/uploads/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/static/phonebook.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/templates/display_contacts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/templates/display_text.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/templates/download.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/templates/errors/403.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/templates/errors/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/templates/errors/413.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/templates/errors/500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/templates/upload_file.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/.flaskenv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/.idea/table_buttons.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/app/templates/bootstrap_wtf.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/app/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week6/assessment1/a1a_skeleton/.idea/a1a_skeleton.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week6/lecture_resource/05-01-birthdate/.idea/05-01-birthdate.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="391a5489-dc10-4266-b8e7-6e70b359fe2a" name="Changes" comment="Add week5 and week5 dan solutions">
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/Exercises/exercise3/.idea/exercise3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/Exercises/exercise3/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/Exercises/exercise3/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/Exercises/exercise3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/Exercises/exercise3/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/Exercises/lecture_solutions/05-01-birthdate/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/Exercises/lecture_solutions/05-01-birthdate/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/DansGym-Bootstrap-Extended/.idea/DansGym-Bootstrap-Extended.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/DansGym-Bootstrap-Extended/.idea/DansGym-Bootstrap-Extended.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/all_fields/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/Exercises/lecture_solutions/05-01-birthdate/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/all_fields/.idea/all_fields.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/DansGym-Uploads-And-Downloads/.idea/DansGym-Uploads-And-Downloads.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/all_fields/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/all_fields/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/all_fields/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/all_fields/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/all_fields/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/all_fields/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/all_fields/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/all_fields/app/templates/all_fields_manual.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/app/templates/all_fields_manual.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/all_fields/app/templates/all_fields_quick_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/app/templates/all_fields_quick_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/all_fields/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/all_fields/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/.flaskenv" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/.flaskenv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/.idea/file_upload_download.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/.idea/all_fields.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/app/data/contacts.csv" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/data/contacts.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/app/data/contacts_bad.csv" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/data/contacts_bad.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/app/templates/bootstrap_wtf.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/app/templates/bootstrap_wtf.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/app/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/app/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/file_upload_download/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/.flaskenv" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/.flaskenv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/.idea/table_buttons.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/.idea/file_upload_download.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/app/templates/bootstrap_wtf.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/templates/bootstrap_wtf.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/app/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/app/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/app/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/app/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/table_buttons/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecature_resource/table_buttons/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/file_upload_download/run.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -299,7 +237,23 @@
       <option name="project" value="LOCAL" />
       <updated>1740594181815</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Add week5 and week5 dan solutions">
+      <option name="closed" value="true" />
+      <created>1740647518118</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1740647518118</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add week5 and week5 dan solutions">
+      <option name="closed" value="true" />
+      <created>1740647556871</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1740647556871</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -321,6 +275,7 @@
     <MESSAGE value="Remove week5 exercise 2" />
     <MESSAGE value="Add week5 exercise 1 download feature" />
     <MESSAGE value="Add week5 exercise 1 dan version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add week5 exercise 1 dan version" />
+    <MESSAGE value="Add week5 and week5 dan solutions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add week5 and week5 dan solutions" />
   </component>
 </project>

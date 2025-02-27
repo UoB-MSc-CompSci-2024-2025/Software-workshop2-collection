@@ -1,0 +1,50 @@
+<!-- ./week_five/ex_three/app/templates/menu.html -->
+{% extends 'base.html' %}
+{% import "bootstrap_wtf.html" as wtf %}
+{% block content %}
+<table class="table">
+    {% set ns = namespace(prev_course=None) %}
+    {% for row in menu %}
+        {% if loop.index0 == 0 %}
+            <thead>
+                <tr>
+                    {% for item in row %}
+                        {% if loop.index0 == 2 %}
+                            <th class="text-end">{{ item }}</th>
+                        {% else %}
+                            <th>{{ item }}</th>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                </tr>
+            </thead>
+        {% else %}
+            {% if ns.prev_course and row[0] != ns.prev_course %}
+                <tr>
+                    <td colspan="3"></td>
+                </tr>
+            {% endif %}
+            <tr>
+                {% for item in row %}
+                    {% if loop.index0 == 0 %}
+                    <td class="fw-bold">{{ item|e }}</td>
+                    {% elif loop.index0 == 2 %}
+                    <td class="text-end">{{ item|e }}</td>
+                    {% else %}
+                    <td>{{ item|e }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% set ns.prev_course = row[0] %}
+        {% endif %}
+    {% endfor %}
+</table>
+<div class="container mt-5 bg-light rounded">
+    <h2 class="fw-bold">
+        <u>Your Order</u>
+    </h2>
+    {{ wtf.quick_form(form_menu, action="", method="post", id="", novalidate=True, autofocus=False) }}
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+<!-- ./week_five/ex_three/app/templates/receipt.html -->
+{% extends 'base.html' %}
+{% import "bootstrap_wtf.html" as wtf %}
+{% block content %}
+<div>
+    <table class="table">
+        <tr>
+            <th>Dish</th>
+            <th class="text-end">Price</th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Starter</th>
+        </tr>
+        <tr>
+            <td>{{ starter }}</td>
+            <td class="text-end">{{ starter_price }}</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Main</th>
+        </tr>
+        <tr>
+            <td>{{ main }}</td>
+            <td class="text-end">{{ main_price }}</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Dessert</th>
+        </tr>
+        <tr>
+            <td>{{ dessert }}</td>
+            <td class="text-end">{{ dessert_price }}</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Total Price</th>
+            <th class="d-flex justify-content-end">
+                <p class="fw-light pe-3">({{ service_charge }}% service charge included)</p>
+                £{{
+                '%.2f' %
+                (
+                (starter_price|float + main_price|float + dessert_price|float)
+                *
+                (1 + service_charge / 100.00)|float
+                )
+                }}
+            </th>
+        </tr>
+    </table>
+</div>
+<div class="mt-5">
+    <form class="d-flex flex-column"
+          method="POST"
+          action="{{ url_for(
+          'receipt',
+          starter=starter,
+          main=main,
+          dessert=dessert,
+          service_charge=service_charge
+          ) }}"
+          novalidate>
+        {{ form_service.hidden_tag() }}
+        <button class="btn btn-primary mb-3"
+                type="submit">
+            Change Service Charge
+        </button>
+        {% if toggle_view == 'True' %}
+        {{ wtf.form_field(form_service.amount, False) }}
+        {{ wtf.form_field(form_service.choose, False) }}
+        {{ wtf.form_field(form_service.submit, False) }}
+        {% endif %}
+    </form>
+    <form method="POST"
+          action="{{  url_for(
+          'download_receipt',
+          starter=starter, starter_price=starter_price,
+          main=main, main_price=main_price,
+          dessert=dessert, dessert_price=dessert_price,
+          service_charge=service_charge
+          ) }}"
+          novalidate>
+        {{ form_download.csrf_token() }}
+        <button class="btn btn-primary" type="submit">Download Receipt</button>
+    </form>
+</div>
+{% endblock %}
