@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+    <h1>Here is the list</h1>
+    <ul>
+    {% for item in my_list %}
+        <li>
+            {{ item }} -
+            <form action="{{ url_for('delete_item') }}" method="POST">
+                {{ form.csrf_token() }}
+                {{ form.choice(value=loop.index0) }}
+                <button class="btn" type="submit">
+                    <i class="bi bi-binoculars"></i>
+                </button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <form action="{{ url_for('reset_items') }}" method="POST">
+        {{ form.csrf_token() }}
+        <button class="btn" type="submit">
+            <i class="bi bi-trash"></i>
+        </button>
+    </form>
+</div>
+{% endblock %}

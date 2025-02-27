@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{%- for error in form.choice1_row.errors %}
+<div class="invalid-feedback d-block">{{ error }}</div>
+{%- endfor %}
+{%- for error in form.choice2_row.errors %}
+<div class="invalid-feedback d-block">{{ error }}</div>
+{%- endfor %}
+
+<h1>My List</h1>
+<table>
+    {% for item in lst %}
+    <tr>
+        {# for information about the special "loop" variable, see:
+            https://jinja.palletsprojects.com/en/stable/templates/#list-of-control-structures
+        #}
+        <td {%- if chosen1|int == loop.index0 %} class="bg-primary px-2"
+            {%- elif chosen2|int == loop.index0 %} class="bg-primary-subtle px-2"
+            {%- else %} class="px-2"
+            {% endif -%}>
+                {{ item }}
+        </td>
+        <td>
+            <form action="{{ url_for('choose') }}" method="post">
+                {{ form.csrf_token() }}
+                {{ form.choice1_row(value=loop.index0) }}
+                {{ form.choice2_row(value=chosen2) }}
+                <button class="btn" type="submit">
+                    <i class="bi-1-circle"></i>
+                </button>
+            </form>
+        </td>
+        <td>
+            <form action="{{ url_for('choose') }}" method="post">
+                {{ form.csrf_token() }}
+                {{ form.choice1_row(value=chosen1) }}
+                {{ form.choice2_row(value=loop.index0) }}
+                <button class="btn" type="submit">
+                    <i class="bi-2-circle"></i>
+                </button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<form action="{{ url_for('choose') }}" method="post">
+    {{ form.csrf_token() }}
+    {{ form.choice1_row(value=-1) }}
+    {{ form.choice2_row(value=-1) }}
+    <button class="btn" type="submit">
+        <i class="bi-x-circle"></i>
+    </button>
+</form>
+{% endblock %}

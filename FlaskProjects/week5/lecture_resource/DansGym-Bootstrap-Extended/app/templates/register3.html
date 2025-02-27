@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+{% block body %}
+<div class="container">
+    <h1>Please register by filling in this form</h1>
+    {{ wtf.quick_form(form, action="", method="POST", id="", novalidate=False, autofocus=False) }}
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+{% block body %}
+<div class="container">
+    <h1>Please click here to download</h1>
+    <form action="" method="POST" novalidate>
+        {{ form.csrf_token() }}
+        {{ wtf.form_field(form.submit, False) }}
+    </form>
+</div>
+{% endblock %}

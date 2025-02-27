@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+    <h1>Upload Complete!</h1>
+    <ul>
+    {% for item in fruit %}
+        <li>{{item}}</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

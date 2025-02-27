@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Text</h1>
+<div class="content">
+    <div class="Container">
+        {% for line in lines %}
+            <div>{{ line }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

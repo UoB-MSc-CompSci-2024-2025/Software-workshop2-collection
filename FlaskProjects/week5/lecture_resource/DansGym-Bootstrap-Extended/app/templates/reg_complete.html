@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+    <h1>Reg successful</h1>
+    <h2>{{ username }}</h2>
+    <h2>{{ email }}</h2>
+    <h2>{{ level }}</h2>
+    <h2>Please click <a href="{{ url_for('upload_image') }}">here</a> to upload your photo</h2>
+</div>
+{% endblock %}
