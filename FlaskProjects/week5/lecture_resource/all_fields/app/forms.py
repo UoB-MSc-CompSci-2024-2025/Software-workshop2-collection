@@ -7,7 +7,7 @@ from wtforms import (BooleanField, DateField,
                      TelField, TimeField, URLField, PasswordField, TextAreaField,
                      ColorField, FieldList, DecimalRangeField
                      )
-from wtforms.validators import NumberRange, Email
+from wtforms.validators import NumberRange, Email, DataRequired
 import datetime
 import decimal
 
@@ -41,4 +41,6 @@ class AllFieldsForm(FlaskForm):
 
 
 
-
+class DynamicMultiplication(FlaskForm):
+    textfield = StringField('Username', validators=[DataRequired('You are silly because you need a fill this field')])
+    submit = SubmitField('Submit', validators=[DataRequired()])

@@ -99,6 +99,7 @@ def upload_csv():
                     contacts.append(header_row)
                     name_duplicate = {}
                     has_duplicate = False
+
                     for idx, row in enumerate(reader):
                         if row[3] is not None and not is_valid_date(row[3]):
                             form.csv.errors.append(

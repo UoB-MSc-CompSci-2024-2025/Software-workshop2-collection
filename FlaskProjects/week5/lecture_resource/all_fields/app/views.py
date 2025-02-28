@@ -1,6 +1,6 @@
 from flask import render_template, flash, request
 from app import app
-from app.forms import AllFieldsForm
+from app.forms import AllFieldsForm, DynamicMultiplication
 
 
 @app.route("/")
@@ -23,3 +23,11 @@ def all_fields_manual():
     elif request.method == 'POST':
         flash('Submit failed', 'danger')
     return render_template('all_fields_manual.html', title='Man All Fields', form=form)
+
+
+@app.route('/table', methods=['GET', 'POST'])
+def table():
+    form = DynamicMultiplication()
+    if form.validate_on_submit():
+        return render_template('table.html', title='QF All Fields', form=form)
+    return render_template('table.html', title='QF All Fields', form=form)

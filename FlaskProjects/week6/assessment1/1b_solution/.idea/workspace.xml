@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aabe79e8-6ad9-421c-8b16-e3e377fd8aa5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../week5/lecture_resource/all_fields/app/templates/table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../a1a_skeleton2/app/static/sample.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../a1a_skeleton2/app/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../a1a_skeleton2/app/templates/bootstrap_wtf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../a1a_skeleton2/app/templates/generic_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../a1a_skeleton2/app/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/calender.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/calender_details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/select.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week5/Exercises/exercise1/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week5/Exercises/exercise1/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week5/Exercises/exercise1/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week5/Exercises/exercise1/app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week5/lecture_resource/all_fields/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week5/lecture_resource/all_fields/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week5/lecture_resource/all_fields/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week5/lecture_resource/all_fields/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week5/lecture_resource/all_fields/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week5/lecture_resource/all_fields/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week5/lecture_resource/all_fields/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week5/lecture_resource/all_fields/app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1a_skeleton/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a1a_skeleton/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1a_skeleton/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../a1a_skeleton/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1a_skeleton/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../a1a_skeleton/app/views.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2tfBvsH4rSIHT30l2RwLHBaBqZp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.app.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/logeshsharma/Documents/Logesh's-UOB/SoftwareWorkshop1-lab/Software-workshop2-collection/FlaskProjects/week6/assessment1/a1a_skeleton_latest/app/templates"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python">
+      <module name="a1a_skeleton_latest" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="/opt/anaconda3/envs/SW2" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="flask" />
+      <option name="PARAMETERS" value="run" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0e3be3396995-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23339.19" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aabe79e8-6ad9-421c-8b16-e3e377fd8aa5" name="Changes" comment="" />
+      <created>1740733481596</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740733481596</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+<!--<h2 class="mb-3">Multiplication Table</h2>-->
+
+<div class="table-responsive mb-5">
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+        <tr>
+            <th>Range</th>
+            <th>Display</th>
+            <th>Save</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in [1,2,3,4,5,6,7,8,9,10,11,12] %}
+        <tr>
+            <td>{{ row }}</td>
+            <td>
+                <form action="{{ url_for('table_range_multiples') }}" method="POST">
+                    <input type="hidden" name="number" value="{{ row }}">
+                    <button type="submit" class="btn btn-primary btn-sm px-2 py-1 text-white">View Table</button>
+                </form>
+            </td>
+            <td>
+                <form action="{{ url_for('download') }}" method="POST">
+                    <input type="hidden" name="number" value="{{ row }}">
+                    <button type="submit" class="btn btn-secondary btn-sm px-2 py-1">Download CSV</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+
+
+
+

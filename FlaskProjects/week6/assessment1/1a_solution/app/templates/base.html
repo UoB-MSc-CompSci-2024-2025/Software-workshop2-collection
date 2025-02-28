@@ -25,11 +25,27 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ url_for('home') }}">Home</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url_for('table_3', number=3) }}">Table3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url_for('table') }}">Find Tables</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url_for('table_range') }}">Table Range</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url_for('upload') }}">Upload Table</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
-
+<div class="container">
+    <h1 class="mt-3 pb-3 fw-bold">
+        <u>{{ title }}</u>
+    </h1>
+</div>
 <div class="container mt-3">
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}

@@ -25,19 +25,28 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ url_for('home') }}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ url_for('all_fields_quick_form') }}">QF All Fields</a>
+                 <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url_for('timeslot', day=2, hour=10, item='gym') }}">Time slots</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ url_for('all_fields_manual') }}">Man All Fields</a>
+                    <a class="nav-link" aria-current="page" href="{{ url_for('display_calender') }}">Display calender</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ url_for('table') }}">Tables</a>
+                    <a class="nav-link" aria-current="page" href="{{ url_for('upload_slots') }}">Upload Slots</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url_for('select') }}">Select</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<div class="container">
+    <h1 class="mt-3 pb-3 fw-bold">
+        <u>{{ title }}</u>
+    </h1>
+</div>
 
 <div class="container mt-3">
     {% with messages = get_flashed_messages(with_categories=true) %}

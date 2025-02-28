@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+<!--<h2 class="mb-3">Multiplication Table</h2>-->
+
+
+<div class="container">
+    {{ wtf.quick_form(form, action="", method="post", id="", novalidate=True, autofocus=False) }}
+</div>
+
+
+{% if multiples %}
+<div class="table-responsive mt-3">
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+        <tr>
+            {% for item in multiples[0] %}
+            <th>{{ item }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in multiples[1:] %}
+        <tr>
+            {% for item in row %}
+            <td>{{ item }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<form class="mt-3 mb-3" action="{{ url_for('download') }}" method="POST">
+    <input type="hidden" name="number" value="{{ multiples[1][0] }}">
+    <button type="submit" class="btn btn-primary">Download CSV</button>
+</form>
+{% endif %}
+{% endblock %}
+
+
+
+
+

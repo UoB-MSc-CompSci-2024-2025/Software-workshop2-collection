@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391a5489-dc10-4266-b8e7-6e70b359fe2a" name="Changes" comment="Add week5 and week5 dan solutions">
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/Exercises/exercise3/.idea/exercise3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/Exercises/exercise3/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/Exercises/exercise3/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/Exercises/exercise3/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week5/Exercises/exercise3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week6/assessment1/a1a_skeleton2/app/templates/table3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
