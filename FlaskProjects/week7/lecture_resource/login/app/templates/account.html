@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Private</h1>
+
+<p>Hello {{ current_user.username }}</p>
+
+<p>This page is only available to logged in users</p>
+
+<p>The email address we have recorded for you is: {{ current_user.email }}</p>
+{% endblock %}
