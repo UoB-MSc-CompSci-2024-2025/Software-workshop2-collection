@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="391a5489-dc10-4266-b8e7-6e70b359fe2a" name="Changes" comment="Add week5 and week5 dan solutions">
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week6/assessment1/a1a_skeleton2/app/templates/table3.html" afterDir="false" />
+    <list default="true" id="391a5489-dc10-4266-b8e7-6e70b359fe2a" name="Changes" comment="Add change password feature">
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week5/lecture_resource/all_fields/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskProjects/week6/assessment1/1b_solution/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week6/assessment1/1b_solution/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/data/data.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/data/data.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,15 +51,16 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/FlaskProjects/week6/assessment1" />
       <recent name="$PROJECT_DIR$/FlaskProjects/week4/Exercises" />
       <recent name="$PROJECT_DIR$/FlaskProjects/week3/Exercises" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/FlaskProjects/week7/Exercises" />
       <recent name="$PROJECT_DIR$/FlaskProjects/week3/Exercises" />
       <recent name="$PROJECT_DIR$/FlaskProjects/week2/Exercises" />
       <recent name="$PROJECT_DIR$/FlaskProjects/week3/leacture_resource" />
       <recent name="$PROJECT_DIR$/FlaskProjects/week3" />
-      <recent name="$PROJECT_DIR$/FlaskProjects/week2/lecture_resource" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -250,7 +255,87 @@
       <option name="project" value="LOCAL" />
       <updated>1740647556871</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add assessment 1a and 1b solutions">
+      <option name="closed" value="true" />
+      <created>1740771248877</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1740771248877</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Add reeadme: assessment 1a and 1b solutions">
+      <option name="closed" value="true" />
+      <created>1740771531728</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1740771531728</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Add week7 lecture logic app">
+      <option name="closed" value="true" />
+      <created>1741429781808</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1741429781808</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Refine readme login project">
+      <option name="closed" value="true" />
+      <created>1741430156126</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1741430156126</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Refine readme login project">
+      <option name="closed" value="true" />
+      <created>1741430334903</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1741430334903</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Refine readme login project">
+      <option name="closed" value="true" />
+      <created>1741430421676</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1741430421676</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Refine readme login project">
+      <option name="closed" value="true" />
+      <created>1741430698791</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1741430698791</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Refine readme login project">
+      <option name="closed" value="true" />
+      <created>1741430731830</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1741430731830</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Refine readme login project">
+      <option name="closed" value="true" />
+      <created>1741430752097</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1741430752097</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Add change password feature">
+      <option name="closed" value="true" />
+      <created>1741450498158</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1741450498158</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -273,6 +358,11 @@
     <MESSAGE value="Add week5 exercise 1 download feature" />
     <MESSAGE value="Add week5 exercise 1 dan version" />
     <MESSAGE value="Add week5 and week5 dan solutions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add week5 and week5 dan solutions" />
+    <MESSAGE value="Add assessment 1a and 1b solutions" />
+    <MESSAGE value="Add reeadme: assessment 1a and 1b solutions" />
+    <MESSAGE value="Add week7 lecture logic app" />
+    <MESSAGE value="Refine readme login project" />
+    <MESSAGE value="Add change password feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add change password feature" />
   </component>
 </project>

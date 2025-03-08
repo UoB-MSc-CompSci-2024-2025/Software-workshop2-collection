@@ -1,10 +1,12 @@
 from crypt import methods
 
 from flask import render_template, redirect, url_for, flash, request, send_file, send_from_directory
+from sqlalchemy.exc import IntegrityError
 from werkzeug.security import check_password_hash
+from wtforms.validators import email
 
 from app import app
-from app.forms import ChooseForm, LoginForm, ChangePasswordForm
+from app.forms import ChooseForm, LoginForm, ChangePasswordForm, RegistrationForm
 from flask_login import current_user, login_user, logout_user, login_required
 import sqlalchemy as sa
 from app import db
@@ -52,10 +54,7 @@ def change_password():
         try:
             user = db.session.execute(db.select(User).filter_by(id=current_user.id)).scalar_one()
 
-            if not re.fullmatch(r'[A-Za-z0-9@#$%^&+=!]{8,}', form.confirmPassword.data):
-                flash('Password should contain at least 8 characters long, at least 1 digit,'
-                      '1 uppercase letter, 1 lowercase letter and 1 special character',
-                      'danger')
+            if not_valid_password(form.confirmPassword.data):
                 return redirect(url_for('change_password'))
 
             if not check_password_hash(user.password_hash, form.oldPassword.data):
@@ -75,10 +74,41 @@ def change_password():
     return render_template('change_password.html', title='Change password', form=form)
 
 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        try:
+            if not_valid_password(form.confirmPassword.data):
+                return render_template('register.html', title='Register', form=form)
+
+            new_user = User(username=form.username.data, email=form.email.data)
+            new_user.set_password(form.confirmPassword.data)
+            db.session.add(new_user)
+            db.session.commit()
+            flash('Register successfully, please login', 'success')
+            return redirect(url_for('login'))
+        except IntegrityError as e:
+            flash(f'{e.orig}, please enter new data', 'danger')
+            return redirect(url_for('register'))
+
+    return render_template('register.html', title='Register', form=form)
+
+
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
+
+def not_valid_password(password):
+    if not re.fullmatch(r'[A-Za-z0-9@#$%^&+=!]{8,}', password):
+        flash('Password should contain at least 8 characters long, at least 1 digit,'
+              '1 uppercase letter, 1 lowercase letter and 1 special character',
+              'danger')
+        return True
+    else:
+        return False
 
 
 # Error handlers
