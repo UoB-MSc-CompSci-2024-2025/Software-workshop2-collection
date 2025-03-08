@@ -1,4 +1,4 @@
-# The app password 
+# The app credentials
 
 Nisha2
 test@123
