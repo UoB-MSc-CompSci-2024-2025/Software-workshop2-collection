@@ -1,6 +1,6 @@
-# Essentials packages need to add to this project.
-** flask-login ** -[https://flask-login.readthedocs.io/en/latest/] 
-** flask-sqlalchemy  ** - [https://flask-sqlalchemy.readthedocs.io/en/stable/quickstart/#installation]
+# Essentials packages need to add to this project.<br />
+** flask-login ** -[https://flask-login.readthedocs.io/en/latest/](#flask-login)<br />
+** flask-sqlalchemy  ** - [https://flask-sqlalchemy.readthedocs.io/en/stable/quickstart/#installation](#flask-sqlalchemy)<br />
 
 
 SQLiteBrowser is an excellent tool to view, query and
