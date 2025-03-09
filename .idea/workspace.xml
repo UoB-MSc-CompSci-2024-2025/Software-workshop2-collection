@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="391a5489-dc10-4266-b8e7-6e70b359fe2a" name="Changes" comment="Add change password feature">
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/templates/users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week6/assessment1/1b_solution/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week6/assessment1/1b_solution/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/data/data.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/data/data.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/views.py" afterDir="false" />
     </list>

@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import SubmitField, HiddenField, StringField, PasswordField, BooleanField
+from wtforms.fields.choices import SelectField
 from wtforms.fields.numeric import IntegerField
 from wtforms.validators import DataRequired, NumberRange, EqualTo, Email
 
@@ -22,6 +23,7 @@ class ChangePasswordForm(FlaskForm):
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired(), Email()])
+    role = SelectField('Role', choices=[(2, 'Normal')], default=2, validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     confirmPassword = StringField('Confirm password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Register')

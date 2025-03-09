@@ -68,7 +68,7 @@ def change_password():
 
             return redirect(url_for('home'))
         except Exception as e:
-            flash(f'Something went wrong {e}', 'success')
+            flash(f'Something went wrong {e}', 'danger')
             return redirect(url_for('change_password'))
 
     return render_template('change_password.html', title='Change password', form=form)
@@ -82,7 +82,7 @@ def register():
             if not_valid_password(form.confirmPassword.data):
                 return render_template('register.html', title='Register', form=form)
 
-            new_user = User(username=form.username.data, email=form.email.data)
+            new_user = User(username=form.username.data, email=form.email.data, role=form.role.data[0])
             new_user.set_password(form.confirmPassword.data)
             db.session.add(new_user)
             db.session.commit()
@@ -93,6 +93,19 @@ def register():
             return redirect(url_for('register'))
 
     return render_template('register.html', title='Register', form=form)
+
+
+@app.route('/users')
+def users():
+    users_result = []
+    try:
+        users_result.append(['Id', 'User Name', 'Email', 'Role'])
+        query = db.select(User)
+        users_result.extend(db.session.scalars(query).all())
+    except Exception as e:
+        flash(f'Something went wrong {e}', 'danger')
+
+    return render_template('users.html', title='Users', users=users_result)
 
 
 @app.route('/logout')

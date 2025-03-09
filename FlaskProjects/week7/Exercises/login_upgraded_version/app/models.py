@@ -10,9 +10,10 @@ class User(UserMixin, db.Model):
     username: so.Mapped[str] = so.mapped_column(sa.String(64), index=True, unique=True)
     email: so.Mapped[str] = so.mapped_column(sa.String(120), index=True, unique=True)
     password_hash: so.Mapped[Optional[str]] = so.mapped_column(sa.String(256))
+    role:so.Mapped[int] = so.mapped_column()
 
     def __repr__(self):
-        return f'User(id={self.id}, username={self.username}, email={self.email})'
+        return f'User(id={self.id}, username={self.username}, email={self.email}, role={self.role})'
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
