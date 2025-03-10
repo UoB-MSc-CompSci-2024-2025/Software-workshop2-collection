@@ -119,9 +119,13 @@ def delete_user():
                 db.select(User.id, User.username).where(User.role == 1)).all()
             if len(admins) > 1:
                 # delete admin user where we have multiple admin
-                db.session.delete(user)
-                db.session.commit()
+                if user.id == current_user.id:
+                    db.session.delete(user)
+                    db.session.commit()
+                    logout_user()
+                    return redirect(url_for('login'))
                 flash('User deleted!', 'success')
+
             else:
                 flash('You can\'t delete the only admin available', 'danger')
         else:
