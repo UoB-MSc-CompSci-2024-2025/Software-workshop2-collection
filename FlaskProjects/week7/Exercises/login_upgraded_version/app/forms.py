@@ -27,3 +27,8 @@ class RegistrationForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     confirmPassword = StringField('Confirm password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Register')
+
+
+class EmptyForm(FlaskForm):
+    delete = HiddenField('Delete')
+

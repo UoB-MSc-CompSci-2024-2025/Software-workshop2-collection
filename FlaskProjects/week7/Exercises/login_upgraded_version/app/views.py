@@ -6,7 +6,7 @@ from werkzeug.security import check_password_hash
 from wtforms.validators import email
 
 from app import app
-from app.forms import ChooseForm, LoginForm, ChangePasswordForm, RegistrationForm
+from app.forms import ChooseForm, LoginForm, ChangePasswordForm, RegistrationForm, EmptyForm
 from flask_login import current_user, login_user, logout_user, login_required
 import sqlalchemy as sa
 from app import db
@@ -95,17 +95,41 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 
-@app.route('/users')
+@app.route('/users', methods=['GET', 'POST'])
 def users():
+    form = EmptyForm()
     users_result = []
     try:
-        users_result.append(['Id', 'User Name', 'Email', 'Role'])
+        users_result.append(['Id', 'User Name', 'Email', 'Role', 'Actions'])
         query = db.select(User)
         users_result.extend(db.session.scalars(query).all())
     except Exception as e:
         flash(f'Something went wrong {e}', 'danger')
 
-    return render_template('users.html', title='Users', users=users_result)
+    return render_template('users.html', title='Users', users=users_result, form=form)
+
+
+@app.route('/delete_user', methods=['GET', 'POST'])
+def delete_user():
+    form = EmptyForm()
+    if form.validate_on_submit():
+        user = db.session.get(User, int(form.delete.data))
+        if int(user.role) == 1:
+            admins = db.session.scalars(
+                db.select(User.id, User.username).where(User.role == 1)).all()
+            if len(admins) > 1:
+                # delete admin user where we have multiple admin
+                db.session.delete(user)
+                db.session.commit()
+                flash('User deleted!', 'success')
+            else:
+                flash('You can\'t delete the only admin available', 'danger')
+        else:
+            db.session.delete(user)
+            db.session.commit()
+            flash('User deleted!', 'success')
+
+    return redirect(url_for('users'))
 
 
 @app.route('/logout')
@@ -148,3 +172,16 @@ def error_413(error):
 @app.errorhandler(500)
 def error_500(error):
     return render_template('errors/500.html', title='Error'), 500
+
+#     <button class="btn" type="submit" onclick="this.form.delete.value='{{ user.id }}'">
+#                             <i class="bi bi-toggle-on "></i>
+#                         </button>
+
+
+# <script>
+# function submitForm(button, userId) {
+#     let form = button.closest('form');
+#     form.querySelector("#selected_user").value = userId;
+#     form.submit();
+# }
+# </script>

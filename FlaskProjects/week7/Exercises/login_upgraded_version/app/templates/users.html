@@ -7,27 +7,35 @@
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
-                <tr>
-                    <!-- Loop to create table headers -->
-                    {% for item in users[0] %}
-                    <th>{{ item }}</th>
-                    {% endfor %}
-                </tr>
+            <tr>
+                <!-- Loop to create table headers -->
+                {% for item in users[0] %}
+                <th>{{ item }}</th>
+                {% endfor %}
+            </tr>
             </thead>
             <tbody>
-                <!-- Loop to create table rows -->
-                {% for user in users[1:] %}
-                <tr>
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.username }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ 'Admin' if user.role == '1' else 'Normal'  }}</td>
-                </tr>
-                {% endfor %}
+            <!-- Loop to create table rows -->
+            {% for user in users[1:] %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ 'Admin' if user.role == '1' else 'Normal' }}</td>
+                <td>
+                    <form action="{{ url_for('delete_user') }}" method="post">
+                        {{ form.csrf_token() }}
+                        {{ form.delete(value=user.id) }}
+                        <button class="btn" type="submit">
+                            <i class="bi bi-trash3"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
             </tbody>
         </table>
     </div>
 </div>
 {% endblock %}
-
 
