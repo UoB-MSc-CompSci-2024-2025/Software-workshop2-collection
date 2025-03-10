@@ -23,6 +23,19 @@
                 <td>{{ user.email }}</td>
                 <td>{{ 'Admin' if user.role == '1' else 'Normal' }}</td>
                 <td>
+                    <form action="{{ url_for('toggle_user_role') }}" method="post">
+                        {{ form.csrf_token() }}
+                        {{ form.delete(value=user.id) }}
+                        <button class="btn" type="submit">
+                            {% if user.role == '1' %}
+                            <i class="bi bi-toggle-on"></i>
+                            {% else %}
+                            <i class="bi bi-toggle-off"></i>
+                            {% endif %}
+                        </button>
+                    </form>
+                </td>
+                <td>
                     <form action="{{ url_for('delete_user') }}" method="post">
                         {{ form.csrf_token() }}
                         {{ form.delete(value=user.id) }}

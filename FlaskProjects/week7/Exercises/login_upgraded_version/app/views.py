@@ -100,7 +100,7 @@ def users():
     form = EmptyForm()
     users_result = []
     try:
-        users_result.append(['Id', 'User Name', 'Email', 'Role', 'Actions'])
+        users_result.append(['Id', 'User Name', 'Email', 'Role','Switch User role','Delete user'])
         query = db.select(User)
         users_result.extend(db.session.scalars(query).all())
     except Exception as e:
@@ -119,9 +119,9 @@ def delete_user():
                 db.select(User.id, User.username).where(User.role == 1)).all()
             if len(admins) > 1:
                 # delete admin user where we have multiple admin
+                db.session.delete(user)
+                db.session.commit()
                 if user.id == current_user.id:
-                    db.session.delete(user)
-                    db.session.commit()
                     logout_user()
                     return redirect(url_for('login'))
                 flash('User deleted!', 'success')
@@ -132,6 +132,30 @@ def delete_user():
             db.session.delete(user)
             db.session.commit()
             flash('User deleted!', 'success')
+
+    return redirect(url_for('users'))
+
+@app.route('/toggle_user_role', methods=['GET', 'POST'])
+def toggle_user_role():
+    form = EmptyForm()
+    if form.validate_on_submit():
+        user = db.session.get(User, int(form.delete.data))
+        if int(user.role) == 1:
+            admins = db.session.scalars(
+                db.select(User.id, User.username).where(User.role == 1)).all()
+            if len(admins) > 1:
+                user.role = 2
+                db.session.commit()
+                if user.id == current_user.id:
+                    logout_user()
+                    return redirect(url_for('login'))
+                flash('User updated!', 'success')
+            else:
+                flash('You can\'t update the only admin available', 'danger')
+        else:
+            user.role = 1
+            db.session.commit()
+            flash('User updated!', 'success')
 
     return redirect(url_for('users'))
 
