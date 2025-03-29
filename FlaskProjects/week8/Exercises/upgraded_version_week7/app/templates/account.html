@@ -13,6 +13,73 @@
 
     <p>Your previous logged in session was : {{ current_user.previous_login }}</p>
 
-    {{ wtf.quick_form(form, action="", method="post", id="", novalidate=True, autofocus=False) }}
+    <div class="container mt-4">
+        <!-- Bootstrap Table Responsive with Rounded Corners -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                <tr>
+                    <th> Id</th>
+                    <th> Tag</th>
+                    <th> Address</th>
+                    <th> PhoneNumber</th>
+                    <th> Delete</th>
+                    <th> Edit</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Loop to create table rows -->
+                {% for addr in addresses %}
+                <tr>
+                    <td>{{ addr.id }}</td>
+                    <td>{{ addr.tag }}</td>
+                    <td>{{ addr.address }}</td>
+                    <td>{{ addr.phone }}</td>
+                    <td>
+                        <form action="{{ url_for('delete_address') }}" method="post">
+                            {{ chooseForm.csrf_token() }}
+                            {{ chooseForm.choice(value=addr.id) }}
+                            <button class="btn" type="submit">
+                                <i class="bi bi-trash3"></i>
+                            </button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ url_for('edit_address') }}" method="post">
+                            {{ chooseForm.csrf_token() }}
+                            {{ chooseForm.choice(value=addr.id) }}
+                            <button class="btn" type="submit">
+                                <i class="bi bi-pencil-square"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% if form.edit.data != '-1' %}
+    <div><h4>Edit Address</h4></div>
+    {% else %}
+    <div><h4>Add New Address</h4></div>
+    {% endif %}
+    <div class="container row justify-content-start col-6">
+        <form method="POST" action="{{ url_for('account') }}" novalidate>
+            {{ form.hidden_tag() }}
+            {{ wtf.form_field(form.addressTag, False) }}
+            {{ wtf.form_field(form.address, False) }}
+            {{ wtf.form_field(form.phone, False) }}
+            {{ wtf.form_field(form.submit, False) }}
+            {% if form.edit.data != '-1' %}
+            <div>
+                <a href="{{ url_for('account') }}" class="btn btn-secondary">Cancel Edit</a>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+
+
 </div>
 {% endblock %}

@@ -37,3 +37,10 @@ class UpdateEmailForm(FlaskForm):
     updateEmail = StringField('Update Email', validators=[DataRequired(), Email()])
     submit = SubmitField('Update')
 
+class AddOrEditAddressFrom(FlaskForm):
+    addressTag =StringField('Tag', validators=[DataRequired()])
+    address = StringField('Enter Address', validators=[DataRequired()])
+    phone = StringField('Enter phone')
+    submit = SubmitField('Save')
+    edit = HiddenField('Edit', default= '-1')
+

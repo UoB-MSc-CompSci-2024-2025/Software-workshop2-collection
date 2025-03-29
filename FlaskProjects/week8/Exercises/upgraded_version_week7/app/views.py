@@ -7,11 +7,12 @@ from werkzeug.security import check_password_hash
 from wtforms.validators import email
 
 from app import app
-from app.forms import ChooseForm, LoginForm, ChangePasswordForm, RegistrationForm, EmptyForm, UpdateEmailForm
+from app.forms import ChooseForm, LoginForm, ChangePasswordForm, RegistrationForm, EmptyForm, UpdateEmailForm, \
+    AddOrEditAddressFrom
 from flask_login import current_user, login_user, logout_user, login_required
 import sqlalchemy as sa
 from app import db
-from app.models import User
+from app.models import User, Address
 from urllib.parse import urlsplit
 import csv
 import io
@@ -39,29 +40,97 @@ def users():
              'Delete user'])
         query = db.select(User)
         users_result.extend(db.session.scalars(query).all())
+        u = db.session.get(User, 1)
     except Exception as e:
         flash(f'Something went wrong {e}', 'danger')
 
     return render_template('users.html', title='Users', users=users_result, form=form)
 
 
+# @app.route("/account", methods=['GET', 'POST'])
+# @login_required
+# def account():
+#     form = UpdateEmailForm()
+#     if form.validate_on_submit():
+#         user = db.session.execute(db.select(User).filter_by(id=current_user.id)).scalar_one()
+#
+#         if user.email == form.updateEmail.data:
+#             flash('User already have this email stored', 'warning')
+#         else:
+#             user.email = form.updateEmail.data
+#             db.session.commit()
+#
+#             flash('Updated the email', 'success')
+#
+#         return redirect(url_for('account'))
+#     return render_template('account.html', title="Account", form=form)
+
+
 @app.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():
-    form = UpdateEmailForm()
+    form = AddOrEditAddressFrom()
+    chooseForm = ChooseForm()
+
+    q = db.select(Address).where(Address.user_id == current_user.id)
+    addresses = db.session.scalars(q)
+
     if form.validate_on_submit():
-        user = db.session.execute(db.select(User).filter_by(id=current_user.id)).scalar_one()
-
-        if user.email == form.updateEmail.data:
-            flash('User already have this email stored', 'warning')
+        if form.edit.data == '-1':
+            # create Address
+            address = Address(tag=form.addressTag.data, address=form.address.data, phone=form.phone.data,
+                              user_id=current_user.id)
+            # add query
+            db.session.add(address)
         else:
-            user.email = form.updateEmail.data
-            db.session.commit()
+            addr = db.session.get(Address, int(form.edit.data))
+            addr.tag = form.addressTag.data # Home -> Close Home
+            addr.address = form.address.data # India -> Bangalore India
+            addr.phone = form.phone.data #
 
-            flash('Updated the email', 'success')
+        db.session.commit()
 
         return redirect(url_for('account'))
-    return render_template('account.html', title="Account", form=form)
+
+    return render_template('account.html', title="Account", addresses=addresses, form=form, chooseForm=chooseForm)
+
+
+@app.route('/edit_address', methods=['GET', 'POST'])
+def edit_address():
+    chooseForm = ChooseForm()
+    form = AddOrEditAddressFrom()
+
+    q = db.select(Address).where(Address.user_id == current_user.id)
+    addresses = db.session.scalars(q)
+
+    if chooseForm.validate_on_submit():
+        addr = db.session.get(Address, int(chooseForm.choice.data))
+
+        form.addressTag.data = addr.tag
+        form.address.data = addr.address
+        form.phone.data = addr.phone
+        form.edit.data = addr.id
+
+        return render_template('account.html', title="Account", addresses=addresses, form=form, chooseForm=chooseForm)
+    return redirect(url_for('account'))
+
+
+@app.route('/delete_address', methods=['GET', 'POST'])
+def delete_address():
+    form = ChooseForm()
+    if form.validate_on_submit():
+        # form.choice.data --> addr.id
+        # Select * from Address where id = form.choice.data
+        # db.session.get(User, 1)
+        addr = db.session.get(Address, int(form.choice.data))
+        db.session.delete(addr)
+        db.session.commit()
+
+        flash('Address Deleted', 'info')
+
+    return redirect(url_for('account'))
+
+
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -90,7 +159,7 @@ def login():
     return render_template('generic_form.html', title='Sign In', form=form)
 
 
-@app.route('/change_password', methods=['GET', 'POST'])
+@app.route('/change_password', methods=['POST'])
 def change_password():
     form = ChangePasswordForm()
     if form.validate_on_submit():
