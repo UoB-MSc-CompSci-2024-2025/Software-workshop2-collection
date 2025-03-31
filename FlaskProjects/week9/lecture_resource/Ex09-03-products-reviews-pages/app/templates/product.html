@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ product.name }}</h1>
+    <p>Price: £{{ '%0.2f' | format(product.price/100) }}</p>
+    <p>Description: {{ product.description }} </p>
+    {% if avg_stars %}
+    <p>Average Review: {{ '%0.2f' | format(avg_stars) }} out of 0 ... 5</p>
+    {% else %}
+    <p>This product has no reviews yet</p>
+    {% endif %}
+    <h2>Reviews</h2>
+    <div class="col-lg-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Stars</th>
+                    <th>Review</th>
+                </tr>
+            </thead>
+            {% for review in product.reviews %}
+                <tr>
+                    <td>{{ review.stars }}</td>
+                    <td class="text-start">
+                        {{ review.text if review.text else '' }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% if current_user.is_authenticated %}
+    <h2 class="mt-5">My Review</h2>
+    <div class="container">
+        {{ wtf.quick_form(form, action="", method="post", id="", novalidate=True, autofocus=False) }}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

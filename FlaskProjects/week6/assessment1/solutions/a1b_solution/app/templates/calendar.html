@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Calendar</h1>
+<div class="col-lg-3">
+<table class="table table-bordered border-primary" >
+    {% for row_idx in range(cal|length) %}
+        <tr>
+            {% for col_idx in range(cal[row_idx]|length) %}
+                {% if row_idx == 0 or col_idx == 0 %}
+                    <th>{{ cal[row_idx][col_idx] }}</th>
+                {% else %}
+                    <td>{{ cal[row_idx][col_idx] }}</td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ title }}</h1>
+
+    <p>The Product details for {{ the_product.name }}</p>
+
+    <p>{{ the_product.description }}</p>
+
+    <p>Price : {{ the_product.price }}</p>
+
+    <p>Review Average : {{ review_average }}</p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+            <tr>
+                <th> Stars</th>
+                <th> Review</th>
+                <th> Reviewer</th>
+                <th> Delete</th>
+                <th> Edit</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Loop to create table rows -->
+            {% for review in reviews %}
+            <tr>
+                <td>{{ review.stars }}</td>
+                <td>{{ review.text }}</td>
+                <td>{{ review.user.username }}</td>
+                {% if current_user.id == review.user.id %}
+                <td>
+                    <form action="{{ url_for('delete_review') }}" method="post">
+                        {{ chooseForm1.csrf_token() }}
+                        {{ chooseForm1.choice(value=review.product_id) }}
+                        <button class="btn" type="submit">
+                            <i class="bi bi-trash3"></i>
+                        </button>
+                    </form>
+                </td>
+                <td>
+                    <form action="{{ url_for('edit_review') }}" method="post">
+                        {{ chooseForm2.csrf_token() }}
+                        {{ chooseForm2.choice(value=review.product_id) }}
+                        <button class="btn" type="submit">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+                    </form>
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if form.edit.data != '-1' %}
+    <div><h4>Edit Review</h4></div>
+    {% else %}
+    <div><h4>Add New Review</h4></div>
+    {% endif %}
+    <div class="container row justify-content-start col-6">
+        <form method="POST" action="{{ url_for('product_detail',productId=the_product.id) }}" novalidate>
+            {{ form.hidden_tag() }}
+            {{ wtf.form_field(form.stars, False) }}
+            {{ wtf.form_field(form.reviewText, False) }}
+            {{ wtf.form_field(form.submit, False) }}
+            {% if form.edit.data != '-1' %}
+            <div>
+                <a href="{{ url_for('product_detail',productId=the_product.id) }}" class="btn btn-secondary">Cancel Edit</a>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+
+</div>
+{% endblock %}

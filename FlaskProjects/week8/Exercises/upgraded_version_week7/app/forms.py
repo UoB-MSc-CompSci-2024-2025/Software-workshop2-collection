@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import SubmitField, HiddenField, StringField, PasswordField, BooleanField
 from wtforms.fields.choices import SelectField
 from wtforms.fields.numeric import IntegerField
+from wtforms.fields.simple import TextAreaField
 from wtforms.validators import DataRequired, NumberRange, EqualTo, Email
 
 
@@ -44,3 +45,9 @@ class AddOrEditAddressFrom(FlaskForm):
     submit = SubmitField('Save')
     edit = HiddenField('Edit', default= '-1')
 
+
+class AddOrEditReviewForm(FlaskForm):
+    stars = IntegerField('Number of stars', validators=[DataRequired()])
+    reviewText = TextAreaField('Write a review', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+    edit = HiddenField('Edit', default= '-1')

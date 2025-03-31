@@ -5,8 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aabe79e8-6ad9-421c-8b16-e3e377fd8aa5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../week10/lecture_resource/Ex10-01-review-user/.idea/Ex10-01-review-user.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week10/lecture_resource/Ex10-02-review-user-pk/.idea/Ex10-02-review-user-pk.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week8/Exercises/a1b_solution/.idea/a1b_solution.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/debug_utils_copy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/templates/product_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/templates/products.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week9/Exercises/relationships/.idea/relationships.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week9/lecture_resource/Ex09-01-accounts/.idea/Ex09-01-accounts.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week9/lecture_resource/Ex09-02-products-reviews/.idea/Ex09-02-products-reviews.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../week9/lecture_resource/Ex09-03-products-reviews-pages/.idea/Ex09-03-products-reviews-pages.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/data/data.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/data/data.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/debug_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/debug_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../week8/Exercises/upgraded_version_week7/app/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,18 +1,16 @@
-from crypt import methods
-from time import sleep
-
 from flask import render_template, redirect, url_for, flash, request, send_file, send_from_directory, session
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.sql.operators import from_
 from werkzeug.security import check_password_hash
 from wtforms.validators import email
 
 from app import app
 from app.forms import ChooseForm, LoginForm, ChangePasswordForm, RegistrationForm, EmptyForm, UpdateEmailForm, \
-    AddOrEditAddressFrom
+    AddOrEditAddressFrom, AddOrEditReviewForm
 from flask_login import current_user, login_user, logout_user, login_required
 import sqlalchemy as sa
 from app import db
-from app.models import User, Address
+from app.models import User, Address, Product, Review
 from urllib.parse import urlsplit
 import csv
 import io
@@ -84,15 +82,64 @@ def account():
             db.session.add(address)
         else:
             addr = db.session.get(Address, int(form.edit.data))
-            addr.tag = form.addressTag.data # Home -> Close Home
-            addr.address = form.address.data # India -> Bangalore India
-            addr.phone = form.phone.data #
+            addr.tag = form.addressTag.data  # Home -> Close Home
+            addr.address = form.address.data  # India -> Bangalore India
+            addr.phone = form.phone.data  #
 
         db.session.commit()
 
         return redirect(url_for('account'))
 
     return render_template('account.html', title="Account", addresses=addresses, form=form, chooseForm=chooseForm)
+
+
+@app.route('/product_detail/<int:productId>', methods=['GET', 'POST'])
+@login_required
+def product_detail(productId):
+    the_product = db.session.get(Product, productId)
+    reviews = the_product.reviews
+
+    review_average = 0
+    for review in reviews:
+        review_average = review_average + review.stars
+
+    if review_average != 0 and not reviews:
+        review_average = review_average / len(reviews)
+    review_average = f'{review_average:.2f}'
+    # print(the_product.reviews)
+
+    # or
+    # q = db.select(Product).where(Product.id == int(productId))
+    # the_product = db.session.scalar(q2)
+
+    chooseForm1 = ChooseForm()
+    chooseForm2 = ChooseForm()
+
+    form = AddOrEditReviewForm()
+    if form.validate_on_submit():  # 4, review => True
+        try:
+            if form.edit.data == '-1':
+                review = Review(stars=form.stars.data, text=form.reviewText.data, product_id=int(productId),
+                                user_id=current_user.id)
+
+                db.session.add(review)
+            else:
+                q = db.select(Review).where(
+                    Review.user_id == current_user.id and Review.product_id == int(chooseForm2.choice.data))
+                review = db.session.scalar(q)
+
+                review.stars = form.stars.data
+                review.text = form.reviewText.data
+
+            db.session.commit()
+        except  IntegrityError:
+            flash('You have gave your review already, please try to edit', 'info')
+
+        return redirect(url_for('product_detail', productId=productId))
+
+    return render_template('product_detail.html', title='Product Details', the_product=the_product,
+                           reviews=reviews, review_average=review_average, form=form, chooseForm1=chooseForm1,
+                           chooseForm2=chooseForm2)
 
 
 @app.route('/edit_address', methods=['GET', 'POST'])
@@ -115,6 +162,38 @@ def edit_address():
     return redirect(url_for('account'))
 
 
+@app.route('/edit_review', methods=['GET', 'POST'])
+def edit_review():
+    chooseForm1 = ChooseForm()
+    chooseForm2 = ChooseForm()
+    the_product = db.session.get(Product, int(chooseForm2.choice.data))
+    reviews = the_product.reviews
+
+    review_average = 0
+    for review in reviews:
+        review_average = review_average + review.stars
+
+    if review_average != 0 and not reviews:
+        review_average = review_average / len(reviews)
+    review_average = f'{review_average:.2f}'
+
+    if chooseForm2.validate_on_submit():
+        q = db.select(Review).where(
+            Review.user_id == current_user.id and Review.product_id == int(chooseForm2.choice.data))
+        review = db.session.scalar(q)
+
+        form = AddOrEditReviewForm()
+        form.stars.data = review.stars
+        form.reviewText.data = review.text
+        form.edit.data = chooseForm2.choice.data
+
+        return render_template('product_detail.html', title='Product Details', the_product=the_product,
+                               reviews=reviews, review_average=review_average, form=form, chooseForm1=chooseForm1,
+                               chooseForm2=chooseForm2)
+
+    return redirect(url_for('product_detail', productId=int(chooseForm2.choice.data)))
+
+
 @app.route('/delete_address', methods=['GET', 'POST'])
 def delete_address():
     form = ChooseForm()
@@ -131,6 +210,28 @@ def delete_address():
     return redirect(url_for('account'))
 
 
+@app.route('/delete_review', methods=['GET', 'POST'])
+@login_required
+def delete_review():
+    form = ChooseForm()
+    if form.validate_on_submit():
+        q = db.select(Review).where(
+            Review.user_id == current_user.id and Review.product_id == int(form.choice.data))
+        review = db.session.scalar(q)
+        db.session.delete(review)
+        db.session.commit()
+
+        flash('Review Deleted', 'info')
+
+    return redirect(url_for('product_detail', productId=int(form.choice.data)))
+
+
+@app.route('/products')
+@login_required
+def products():
+    q = db.select(Product)
+    products = db.session.scalars(q)
+    return render_template('products.html', title='Products', products=products)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -159,7 +260,7 @@ def login():
     return render_template('generic_form.html', title='Sign In', form=form)
 
 
-@app.route('/change_password', methods=['POST'])
+@app.route('/change_password', methods=['GET', 'POST'])
 def change_password():
     form = ChangePasswordForm()
     if form.validate_on_submit():
@@ -327,15 +428,3 @@ def error_413(error):
 def error_500(error):
     return render_template('errors/500.html', title='Error'), 500
 
-#     <button class="btn" type="submit" onclick="this.form.delete.value='{{ user.id }}'">
-#                             <i class="bi bi-toggle-on "></i>
-#                         </button>
-
-
-# <script>
-# function submitForm(button, userId) {
-#     let form = button.closest('form');
-#     form.querySelector("#selected_user").value = userId;
-#     form.submit();
-# }
-# </script>

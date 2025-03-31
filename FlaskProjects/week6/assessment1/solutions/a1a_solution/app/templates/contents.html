@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Display or Download a Times Table</h1>
+<div class="container">
+<table>
+    {% for num in range(1,13) %}
+        <tr>
+            <td class="pe-3">{{ num }}</td>
+            <td>
+                <form action="{{ url_for('contents_op') }}" method="post">
+                    {{ form.csrf_token() }}
+                    {{ form.number(value=num) }}
+                    {{ form.operation(value='Display') }}
+                    <button class="btn btn-outline-primary btn-sm" type="submit">Display</button>
+                </form>
+            </td>
+            <td>
+                <form action="{{ url_for('contents_op') }}" method="post">
+                    {{ form.csrf_token() }}
+                    {{ form.number(value=num) }}
+                    {{ form.operation(value='Download') }}
+                    <button class="btn btn-outline-primary btn-sm" type="submit">Download</button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

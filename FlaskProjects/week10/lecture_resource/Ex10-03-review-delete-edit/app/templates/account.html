@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+<h1>Private Account Page</h1>
+
+<p>Hello {{ current_user.username }}</p>
+
+<p>This page is only available to you as the currently logged in user</p>
+
+<p>The email address we have recorded for you is: {{ current_user.email }}</p>
+
+
+<h2 class="mt-5">Your Addresses</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tag
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Phone
+            </th>
+        </tr>
+    </thead>
+    {% for addr in current_user.addresses %}
+        <tr>
+            <td>
+                {{ addr.tag }}
+            </td>
+            <td>
+                {{ addr.address }}
+            </td>
+            <td>
+                {{ '' if addr.phone == None else addr.phone }}
+            </td>
+            <td>
+                <form action="{{ url_for('delete_addr') }}" method="post">
+                    {{ choose_form.csrf_token() }}
+                    {{ choose_form.choice(value=addr.id) }}
+                    <button class="btn" type="submit">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </form>
+            </td>
+            <td>
+                <form action="{{ url_for('edit_addr') }}" method="post">
+                    {{ choose_form.csrf_token() }}
+                    {{ choose_form.choice(value=addr.id) }}
+                    <button class="btn" type="submit">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+<h2 class="mt-5">{{ 'Add New' if form.edit.data == '-1' else 'Edit' }} Address</h2>
+<div class="container row justify-content-start col-6">
+    <form method="POST" action="{{ url_for('account') }}" novalidate>
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.tag, False) }}
+        {{ wtf.form_field(form.address, False) }}
+        {{ wtf.form_field(form.phone, False) }}
+        {{ wtf.form_field(form.submit, False) }}
+        {% if form.edit.data != '-1' %}
+        <div>
+            <a href="{{ url_for('account') }}" class="btn btn-secondary">Cancel Edit</a>
+        </div>
+        {% endif %}
+    </form>
+</div>
+
+{% endblock %}

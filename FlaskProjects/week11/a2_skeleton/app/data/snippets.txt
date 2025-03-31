@@ -1,0 +1,55 @@
+# reset the database
+reset_db()
+
+# Create the DB and all tables
+db.create_all()
+
+# Delete all tables, but not the DB
+# db.drop_all()
+
+# If something goes wrong, undo any changes made by
+# rolling back the current transaction
+db.session.rollback()
+
+
+# Deleting an object
+u = db.session.get(User, 3)
+print(u)
+db.session.delete(u)
+db.session.commit()  
+u=db.session.get(User, 3)
+print(u)
+
+# Adding back the object just deleted
+u3 = User(username='yin', email='y@b.com')
+u3.set_password('yin.pw')
+db.session.add(u3)
+db.session.commit()
+
+
+# Queries
+books = db.session.scalars(db.select(Book)).all()
+for u in books:
+    print(u)
+
+q=db.select(User.username, User.email)
+db.session.execute(q).all()
+db.session.execute(q).first()
+
+q=db.select(User.username, User.email).where(User.username=='amy')
+db.session.execute(q).one()
+db.session.execute(q).one_or_none()
+
+q = db.select(User)
+db.session.scalars(q).all()
+
+q=db.select(User.username, User.email)
+db.session.scalar(q)
+
+q=db.select(User.username, User.email).where(User.username=='amy')
+db.session.scalars(q).all()
+db.session.scalars(q).first()
+db.session.scalars(q).one()
+db.session.scalars(q).one_or_none()
+
+

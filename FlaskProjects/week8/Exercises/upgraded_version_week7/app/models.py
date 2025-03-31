@@ -24,6 +24,8 @@ class User(UserMixin, db.Model):
     secondary_email: so.Mapped[Optional[str]] = so.mapped_column(sa.String(120), index=True, unique=True)
     addresses: so.Mapped[list['Address']] = relationship(back_populates='user', cascade='all, delete-orphan') # 1, N
 
+    reviews: so.Mapped[list['Review']] = relationship(back_populates='user', cascade='all, delete-orphan')
+
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
@@ -65,12 +67,17 @@ class Product(db.Model):
     reviews: so.Mapped[list['Review']] = relationship(back_populates='product', cascade='all, delete-orphan')
 
 
-@dataclass
 class Review(db.Model):
     __tablename__ = 'reviews'
+    # __table_args__ = (
+    #     sa.UniqueConstraint('product_id', 'user_id'),  # (home, 1) (home ,2) # for combination for 2 classes
+    # )
 
-    id: so.Mapped[int] = so.mapped_column(primary_key=True)
+    # id: so.Mapped[int] = so.mapped_column(primary_key=True)
     stars: so.Mapped[int] = so.mapped_column()
     text: so.Mapped[Optional[str]] = so.mapped_column(sa.String(256))
-    product_id: so.Mapped[int] = mapped_column(ForeignKey('products.id'), index=True)
+    product_id: so.Mapped[int] = mapped_column(ForeignKey('products.id'), index=True, primary_key=True)
     product: so.Mapped['Product'] = relationship(back_populates='reviews')
+
+    user_id: so.Mapped[int] = mapped_column(ForeignKey('users.id'), index=True,primary_key=True)
+    user: so.Mapped['User'] = relationship(back_populates='reviews')

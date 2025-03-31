@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="391a5489-dc10-4266-b8e7-6e70b359fe2a" name="Changes" comment="Add change password feature">
-      <change afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/templates/users.html" afterDir="false" />
+    <list default="true" id="391a5489-dc10-4266-b8e7-6e70b359fe2a" name="Changes" comment="Add Week9 exercise solution">
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week8/Exercises/a1b_solution/.idea/a1b_solution.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week9/Exercises/relationships/.idea/relationships.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlaskProjects/week9/lecture_resource/Ex09-01-accounts/.idea/Ex09-01-accounts.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/data/data.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/data/data.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week7/Exercises/login_upgraded_version/app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlaskProjects/week6/assessment1/1b_solution/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlaskProjects/week6/assessment1/1b_solution/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +49,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/FlaskProjects/week8/Exercises" />
       <recent name="$PROJECT_DIR$/FlaskProjects/week6/assessment1" />
       <recent name="$PROJECT_DIR$/FlaskProjects/week4/Exercises" />
       <recent name="$PROJECT_DIR$/FlaskProjects/week3/Exercises" />
@@ -336,13 +334,50 @@
       <option name="project" value="LOCAL" />
       <updated>1741450498158</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Add delete user feature">
+      <option name="closed" value="true" />
+      <created>1741611118657</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1741611118657</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Add delete user feature">
+      <option name="closed" value="true" />
+      <created>1741623867039</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1741623867039</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Add change user role feature">
+      <option name="closed" value="true" />
+      <created>1741637236906</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1741637236906</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Add Week8 exercise">
+      <option name="closed" value="true" />
+      <created>1743068709251</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1743068709251</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Add Week9 exercise solution">
+      <option name="closed" value="true" />
+      <created>1743232579838</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1743232579838</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="base code" />
-    <MESSAGE value="Add URL management" />
-    <MESSAGE value="Add readme description" />
     <MESSAGE value="Add Week3 lecture resources" />
     <MESSAGE value="Add Week2 exercises resources" />
     <MESSAGE value="Remove .idea folder in root" />
@@ -364,6 +399,10 @@
     <MESSAGE value="Add week7 lecture logic app" />
     <MESSAGE value="Refine readme login project" />
     <MESSAGE value="Add change password feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add change password feature" />
+    <MESSAGE value="Add delete user feature" />
+    <MESSAGE value="Add change user role feature" />
+    <MESSAGE value="Add Week8 exercise" />
+    <MESSAGE value="Add Week9 exercise solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Week9 exercise solution" />
   </component>
 </project>

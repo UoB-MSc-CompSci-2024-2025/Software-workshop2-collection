@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Calendar</h1>
+<div class="col-lg-3">
+<table class="table table-bordered border-primary" >
+    {% for row_idx in range(cal|length) %}
+        <tr>
+            {% for col_idx in range(cal[row_idx]|length) %}
+                {% if row_idx == 0 or col_idx == 0 %}
+                    <th>{{ cal[row_idx][col_idx] }}</th>
+                {% else %}
+                    <td {% if (row_idx, col_idx) == selected %} class="bg-warning" {% endif %}>
+                        <form action="{{ url_for('select') }}" method="post">
+                            {{ form.csrf_token() }}
+                            {{ form.select_row(value=row_idx) }}
+                            {{ form.select_col(value=col_idx) }}
+                            <button class="btn btn-sm" type="submit"><i class="bi bi-check-square"></i></button>
+                        </form>
+                        {{ cal[row_idx][col_idx] }}
+                    </td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

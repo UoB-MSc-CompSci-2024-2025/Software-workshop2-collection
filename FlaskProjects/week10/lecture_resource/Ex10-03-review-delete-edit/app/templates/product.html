@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ product.name }}</h1>
+    <p>Price: £{{ '%0.2f' | format(product.price/100) }}</p>
+    <p>Description: {{ product.description }} </p>
+    {% if avg_stars %}
+    <p>Average Review: {{ '%0.2f' | format(avg_stars) }} out of 0 ... 5</p>
+    {% else %}
+    <p>This product has no reviews yet</p>
+    {% endif %}
+    <h2>Reviews</h2>
+    <div class="col-lg-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Reviewer</th>
+                    <th>Stars</th>
+                    <th>Review</th>
+                </tr>
+            </thead>
+            {% for review in product.reviews %}
+                <tr>
+                    <td>{{ review.user.username }}</td>
+                    <td>{{ review.stars }}</td>
+                    <td class="text-start">
+                        {{ review.text if review.text else '' }}
+                    </td>
+                    {% if review.user == current_user %}
+                    <td>
+                        <form action="{{ url_for('delete_review') }}" method="post">
+                            {{ choose_form.csrf_token() }}
+                            {{ choose_form.choice(value='%d,%d'|format(review.product_id, review.user_id)) }}
+                            <button class="btn" type="submit">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ url_for('edit_review') }}" method="post">
+                            {{ choose_form.csrf_token() }}
+                            {{ choose_form.choice(value='%d,%d'|format(review.product_id, review.user_id)) }}
+                            <button class="btn" type="submit">
+                                <i class="bi bi-pencil-square"></i>
+                            </button>
+                        </form>
+                    </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% if current_user.is_authenticated %}
+    <h2 class="mt-5">{{ 'Add New' if form.edit.data == '' else 'Edit' }} Review</h2>
+    <div class="container row justify-content-start col-6">
+        <form method="POST" action="{{ url_for('product', id=product.id) }}" novalidate>
+            {{ form.hidden_tag() }}
+            {{ wtf.form_field(form.stars, False) }}
+            {{ wtf.form_field(form.text, False) }}
+            {% if form.edit.data == '' %}
+                {{ wtf.form_field(form.submit, False) }}
+            {% else %}
+                {{ wtf.form_field(form.update, False) }}
+            <div>
+                <a href="{{ url_for('product', id=product.id) }}" class="btn btn-secondary">Cancel Edit</a>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+
+    {% endif %}
+</div>
+{% endblock %}

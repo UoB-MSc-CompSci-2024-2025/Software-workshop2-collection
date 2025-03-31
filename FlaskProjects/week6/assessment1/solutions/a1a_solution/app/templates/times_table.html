@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ base }} Times Table</h1>
+<div class="col-lg-3">
+<table class="table">
+    {% for baseval, val, product in times_table %}
+        <tr>
+            <td>{{ baseval }}</td>
+            <td><i class="bi bi-x"></i></td>
+            <td>{{ val }}</td>
+            <td>=</td>
+            <td>{{ product }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

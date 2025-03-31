@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Products</h1>
+<div class="col-lg-3">
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    {% for product in products %}
+        <tr>
+            <td class="text-start text-nowrap">
+                <a href="{{ url_for('product', id=product.id) }}">{{ product.name }}</a>
+            </td>
+            <td class='text-end'>£{{ '%0.2f' | format(product.price/100) }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

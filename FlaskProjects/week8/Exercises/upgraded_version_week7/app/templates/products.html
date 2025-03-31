@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <!-- Bootstrap Table Responsive with Rounded Corners -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+            <tr>
+                <th> Id</th>
+                <th> Product Name</th>
+                <th> Description</th>
+                <th> Price in pence</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Loop to create table rows -->
+            {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>
+                    <div>
+                        <a href="{{ url_for('product_detail',productId=product.id) }}">{{ product.name }}</a>
+                    </div>
+                </td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+<h1>Private Account Page</h1>
+
+<p>Hello {{ current_user.username }}</p>
+
+<p>This page is only available to you as the currently logged in user</p>
+
+<p>The email address we have recorded for you is: {{ current_user.email }}</p>
+
+{% endblock %}
